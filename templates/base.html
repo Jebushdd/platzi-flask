@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block styles %}
+        {{ bootstrap.load_css() }}
+    {% endblock styles %}
+    <title>
+        {% block title %}Flask Platzi | {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> 
+    {% endblock head %}
+</head>
+<body>
+    
+{% block body %}
+    {% block navbar %}
+        
+    {% include 'navbar.html' %}
+
+    {% endblock %}
+    {% block content %}{% endblock %}
+{% endblock %}
+
+{% block scripts %}
+    {{ bootstrap.load_js() }}
+{% endblock scripts %}
+
+</body>
+</html>
